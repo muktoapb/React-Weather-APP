@@ -43,7 +43,7 @@ function Home() {
      .then((response)=>response.json())
      .then((actualData) => setWeather(actualData))
      .catch((err) => {
-       console.log('werr',err.message);
+      //  console.log('werr',err.message);
      });
   }
   
