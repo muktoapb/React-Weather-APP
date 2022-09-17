@@ -15,6 +15,7 @@ img {
 
 a {
     text-decoration: none;
+    color: #fff;
 }
 
 
@@ -116,12 +117,12 @@ button.search_btn svg {
 }
 
 .current_time {
-    padding-bottom: 30px;
-    /* border-bottom: 1px solid #000; */
-    margin-bottom: 30px;
-    font-size: 18px;
+    font-size: 16px;
 }
-
+.gitlink{
+    display: block;
+    margin-top: 20px;
+}
 /* highligh  */
 .CardWrapper .row{
     display: flex;
@@ -189,8 +190,33 @@ span.line {
     margin: 5px 0;
     max-width: 300px;
 }
+.social {
+    text-align: right;
+}
 
+.social ul {
+    list-style: none;
+}
 
+.social ul li {
+    display: inline-block;
+}
+
+.social a {
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    margin: 0 5px;
+}
+
+.content_wrapper {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.social {
+    margin-top: 20px;
+}
 /* responsive  */
 @media only screen and (max-width: 991px) {
     .single_weather_card {
@@ -218,8 +244,6 @@ span.line {
     
     .current_time {
         margin-top: 100px;
-        margin-bottom: 0;
-        padding-bottom: 0;
     }
     
     .single_weather_card {

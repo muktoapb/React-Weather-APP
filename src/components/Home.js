@@ -7,7 +7,7 @@ import Poem from './poem'
 import Footer from './footer'
 
 
-// 2add26f550517e795608ab9e601aa1db
+
 function Home() {
   const apikey = process.env.REACT_APP_WEATHER_KEY;
   const Access_Key = process.env.REACT_APP_IMAGE_KEY;
@@ -65,7 +65,7 @@ function Home() {
 
   },[weather]);
 // Weather API end 
-// console.log(weather);
+console.log(weather);
 // poem api 
 useEffect(()=>{
   fetch(`https://poetrydb.org/title/nature`) 
