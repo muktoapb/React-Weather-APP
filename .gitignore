@@ -1,0 +1,48 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Google Services (ex. APIs and Firebase)
+google-services.json
+GoogleService-Info.plist
+# Local config/setup
+database.rules.json
+samples/android/Continote/app/src/main/res/values/strings.xml
+samples/chrome-extension/Continote/scripts/config.js
+samples/ios/Continote/Continote/Constants.swift
+samples/ios/Continote/Continote/Info.plist
+samples/ios/Continote/Continote.xcodeproj/project.pbxproj
+samples/web/Continote/database.rules.json
+samples/web/Continote/public/scripts/config.js
+
+# Libraries for samples
+samples/android/Continote/app/libs/*.aar
+samples/chrome-extension/Continote/scripts/firebase-continue.js
+samples/ios/Continote/Continote/FCNContinue.h
+samples/ios/Continote/Continote/FCNContinue.m
+
+# testing
+/coverage
+
+# production
+/build
+DerivedData/
+.firebase
+firebase.json
+# misc
+.DS_Store
+.firebaserc
+firebase-debug.log
+.github
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

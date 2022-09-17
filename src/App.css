@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* wrappers  
+==================*/
+
+.App {
+    max-width: 1020px;
+    border-radius: 20px;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.main_wrapper {
+    display: grid;
+    grid-template-columns: 300px auto;
+    min-height: calc(100vh - 100px);
+    position: relative;
+}
+
+.main_wrapper>img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.content_wrapper {
+    
+    padding: 30px;
+
+}
+
+.side_bar {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    display: flex;
+    flex-direction: column;
+}
+
+.current_time {
+    margin-top: auto;
+}
+
+/* Search 
+=============== */
+.search_form input {
+    width: 100%;
+    padding: 5px 30px 5px 5px;
+    border: 1px solid #000;
+    background: transparent;
+    outline: none !important;
+
+}
+
+.search_form input::placeholder {
+    color: #000;
+}
+
+.search_form {
+    position: relative;
+}
+
+button.search_btn {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button.search_btn svg {
+    width: 20px;
+    height: auto;
+}
+
+/* Weather card 
+=================== */
+.weather_main_card {
+    margin-top: 30px;
+}
+
+
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.weatherconditon {
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
+.current_time {
+    padding-bottom: 30px;
+    /* border-bottom: 1px solid #000; */
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+/* highligh  */
+.CardWrapper .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* highligh  */
+.single_weather_card{
+    background: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 30px rgba(3, 3, 3, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 15px;
+    color: #fff;
+    flex: 1 1 30%;
+    margin: 1.5%;
+    display: grid;
+    grid-template-columns: auto 50px;
+    border-radius:10px ;
+    -webkit-border-radius:10px ;
+    -moz-border-radius:10px ;
+    -ms-border-radius:10px ;
+    -o-border-radius:10px ;
+    text-shadow: 0 0 2px #000;
+}
+
+.swicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swicon svg {
+    width: 50px;
+    height: auto;
+}
+
+/* poem  */
+.poem_area{
+    background: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 30px rgba(3, 3, 3, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 15px;
+    margin-top: 50px;
+    margin-left: 15px;
+    margin-right: 15;
+    color: #fff;
+    border-radius:10px ;
+    -webkit-border-radius:10px ;
+    -moz-border-radius:10px ;
+    -ms-border-radius:10px ;
+    -o-border-radius:10px ;
+    text-shadow: 0 0 2px #000;
+}
+h4.ptitle {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+span.line {
+    display: block;
+    border-bottom: 1px solid #fff;
+    height: 1px;
+    margin: 5px 0;
+    max-width: 300px;
+}
+
+
+/* responsive  */
+@media only screen and (max-width: 991px) {
+    .single_weather_card {
+        grid-template-columns: 100%;
+    }
+    
+    .swicon {
+        grid-row-start: 1;
+        justify-content: flex-start;
+    }
+    
+    .main_wrapper {
+        grid-template-columns: 250px  auto;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .main_wrapper {
+        display: block;
+    }
+    
+    .App {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .current_time {
+        margin-top: 100px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .single_weather_card {
+        flex: 1 1 calc(50% - 10px);
+        margin: 5px;
+    }
+    
+    .poem_area {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .content_wrapper {
+        padding: 15px;
+    }
+}
+
