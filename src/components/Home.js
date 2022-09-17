@@ -63,9 +63,9 @@ function Home() {
     .then((response)=>response.json())
     .then((actualData) => setNature(actualData))
 
-  },[weather]);
+  },[weather,Access_Key]);
 // Weather API end 
-console.log(weather);
+// console.log(weather);
 // poem api 
 useEffect(()=>{
   fetch(`https://poetrydb.org/title/nature`) 
