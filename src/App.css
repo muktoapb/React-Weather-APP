@@ -166,7 +166,7 @@ button.search_btn svg {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     padding: 15px;
-    margin-top: 50px;
+    margin-top: 15px;
     margin-left: 15px;
     margin-right: 15;
     color: #fff;
@@ -215,7 +215,7 @@ span.line {
     justify-content: space-between;
 }
 .social {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 /* responsive  */
 @media only screen and (max-width: 991px) {
