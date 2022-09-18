@@ -5,16 +5,13 @@ import { GiWindTurbine,GiWindSlap } from "react-icons/gi";
 import moment from 'moment';
 function Highlight({weather, timef}) {
 
-    const sunrise = moment(weather.sys?.sunrise);
-    console.log(sunrise);
-    // console.log(new Date(weather?.sys?.sunrise).toLocaleString('en-US',{timeZone:weather?.timezone}));
-        const sunset = timef(new Date(weather.sys?.sunset*1000));
-
-    // console.log(sunset);
+    const sunrise = moment.utc(weather.sys?.sunrise,'X').add(weather?.timezone,'seconds').format('h:mm a');
+    const sunset = moment.utc(weather.sys?.sunset,'X').add(weather?.timezone,'seconds').format('h:mm a');
+    
     return (
         <div className="CardWrapper">
             <div className="row">
-            <WeatherCard title="Sunrise" value={sunset} icon={<WiSunrise/>}/>
+            <WeatherCard title="Sunrise" value={sunrise} icon={<WiSunrise/>}/>
             <WeatherCard title="Sunset" value={sunset} icon={<WiSunset/>}/>
             <WeatherCard title="Humidity" value={weather.main?.humidity} unit="%" icon={<WiHumidity/>}/>
             <WeatherCard title="Wind" value={weather.wind?.speed} unit=" km/h" icon={<GiWindTurbine/>}/>
