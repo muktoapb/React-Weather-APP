@@ -60,6 +60,7 @@ a {
     -webkit-backdrop-filter: blur(10.4px);
     display: flex;
     flex-direction: column;
+    text-shadow: 0 0 1px #464646;
 }
 
 .current_time {
@@ -129,7 +130,7 @@ button.search_btn svg {
     flex-wrap: wrap;
 }
 /* highligh  */
-.single_weather_card{
+.single_weather_card,.content_wrapper .citynotfound{
     background: rgba(0, 0, 0, 0.12);
     box-shadow: 0 4px 30px rgba(3, 3, 3, 0.1);
     backdrop-filter: blur(4px);
@@ -147,7 +148,11 @@ button.search_btn svg {
     -o-border-radius:10px ;
     text-shadow: 0 0 2px #000;
 }
-
+.content_wrapper .citynotfound{
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 .swicon {
     display: flex;
     align-items: center;

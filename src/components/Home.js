@@ -5,6 +5,7 @@ import Highlight from './Highlight';
 import LocationInfo from './LocationInfo'
 import Poem from './poem'
 import Footer from './footer'
+import NotFound from './notfound';
 
 
 
@@ -41,10 +42,10 @@ function Home() {
      //fatch weather data
      fetch(`https://api.openweathermap.org/data/2.5/weather?${p}&appid=${apikey}&lang=en&units=metric`)
      .then((response)=>response.json())
-     .then((actualData) => setWeather(actualData))
-     .catch((err) => {
-      //  console.log('werr',err.message);
-     });
+     .then((actualData) => {
+      console.log('actual', actualData);
+      setWeather(actualData)
+    })
   }
   
   
@@ -55,7 +56,7 @@ function Home() {
   },[location,apikey]);
 //location end
 
-// Weather API 
+// image api
   useEffect(()=>{
     fetch(
       `https://api.unsplash.com/search/photos?page=1&query=${weather.weather?.[0].main}&client_id=${Access_Key}`
@@ -84,11 +85,11 @@ const pnum = Math.floor(Math.random() * poem?.length);
       <img src={nature.results?.[num].urls.regular} alt={nature.results?.[num].alt_description}/>
         <div className="side_bar">
             <Search weathersearch={weatherfatch}/>
-            <MainWeatherCard weather={weather}/>
-            <LocationInfo weather={weather} timef={currentTime}/>
+            {weather?.cod ===200?<MainWeatherCard weather={weather}/>:<NotFound/>}
+            {weather?.cod ===200&&<LocationInfo weather={weather}/>}
         </div>
         <div className="content_wrapper">
-            <Highlight weather={weather} timef={currentTime}/>
+           {weather.cod===200? <Highlight weather={weather} timef={currentTime}/>:<NotFound/>}
             <Poem  poem={poem[pnum]}/>
             <Footer/>
         </div>
