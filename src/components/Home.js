@@ -41,6 +41,7 @@ function Home() {
   //Location search
   useEffect(() => {
     weatherfatch(`lat=${location[0]}&lon=${location[1]}`);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location, apikey]);
   //location end
 
